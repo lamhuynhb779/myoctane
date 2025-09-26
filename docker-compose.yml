@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: "myoctane-img"
+        ports:
+            -   "8001:8001"
+        volumes:
+            -   .:/var/www
+#        command: php artisan serve --host=0.0.0.0 --port=8001
+        command: php artisan octane:start --server=roadrunner --workers=8 --host=0.0.0.0 --port=8001
