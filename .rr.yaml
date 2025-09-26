@@ -1,0 +1,9 @@
+server:
+  command: "php artisan octane:worker"
+  relay: "pipes"
+
+http:
+  address: 0.0.0.0:8001
+  pool:
+    num_workers: 4
+    max_jobs: 500

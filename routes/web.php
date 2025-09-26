@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,3 +10,13 @@ Route::get('/', function () {
 
     return 'ok PID: '.$pid;
 });
+
+
+Route::get('/increate-count', function () {
+    $myService = App::make('MyService');
+    $pid = getmypid();
+    $myService->increment();
+
+    return "Worker PID: $pid, Counter: {$myService->counter}";
+});
+
