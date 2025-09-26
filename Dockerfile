@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     libonig-dev \
     curl \
+    procps \
     && docker-php-ext-install pdo_mysql mbstring zip sockets pcntl
 
 # Install Composer
